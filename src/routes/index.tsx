@@ -1,3 +1,4 @@
+import { AppBar, AppContainer } from "@/components/layout";
 import {
   createBrowserHistory,
   createRootRouteWithContext,
@@ -14,7 +15,12 @@ interface RouterContext {
 }
 
 const rootRoute = createRootRouteWithContext<RouterContext>()({
-  component: () => <Outlet />,
+  component: () => (
+    <AppContainer>
+      <AppBar />
+      <Outlet />
+    </AppContainer>
+  ),
 });
 
 const getParentRoute = () => rootRoute;

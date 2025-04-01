@@ -4,11 +4,11 @@ import { createLazyRoute, Link } from "@tanstack/react-router";
 
 function Page() {
   return (
-    <Stack className="gap-2 p-2 h-screen">
+    <Stack className="gap-2 p-2">
       <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl leading-14">
         Welcome to a
         <br />
-        <span className="text-orange-500 bg-orange-200"> COOL homepage!!!</span>
+        <span className="text-blue-500 bg-blue-200"> COOL homepage!!!</span>
       </h1>
       <p className="leading-5 text-gray-600">
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem
@@ -16,7 +16,7 @@ function Page() {
         reprehenderit maiores possimus adipisci molestiae perferendis dicta
         laboriosam quaerat fugit quasi ad.
       </p>
-      <Button className="bg-orange-500 text-orange-200 mt-auto">
+      <Button className="bg-blue-500 text-blue-50 mt-auto">
         <Link to="/signup">Get started!</Link>
       </Button>
     </Stack>

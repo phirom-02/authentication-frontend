@@ -1,12 +1,12 @@
 import { SignupForm } from "@/features/auth/components/signup";
 import { createLazyRoute } from "@tanstack/react-router";
 
-function index() {
+function Page() {
   return <SignupForm />;
 }
 
 const Signup = createLazyRoute("/signup")({
-  component: index,
+  component: Page,
 });
 
 export default Signup;
