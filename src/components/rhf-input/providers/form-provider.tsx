@@ -8,7 +8,9 @@ export default function FormProvider<T extends Record<string, unknown>>({
 }: Readonly<FormProviderProps<T>>) {
   return (
     <RhfFormProvider {...methods}>
-      <form onSubmit={onSubmit}>{children}</form>
+      <form className="h-full" onSubmit={onSubmit}>
+        {children}
+      </form>
     </RhfFormProvider>
   );
 }
