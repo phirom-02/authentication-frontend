@@ -24,12 +24,12 @@ export default function RhfTextfield({
       name={name}
       render={({ field }) => (
         <FormItem>
-          <FormLabel>{label}</FormLabel>
+          <FormLabel className="text-neutral-500">{label}</FormLabel>
           <FormControl>
-            <Input {...other} {...field} />
+            <Input className="text-sm" {...other} {...field} />
           </FormControl>
-          <FormDescription>{description}</FormDescription>
-          <FormMessage />
+          <FormDescription className="text-xs">{description}</FormDescription>
+          <FormMessage className="text-xs" />
         </FormItem>
       )}
     />

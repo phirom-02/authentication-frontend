@@ -4,10 +4,10 @@ import { Stack } from "@/components/ui/stack";
 import FormProvider from "@/components/rhf-input/providers";
 import RhfTextfield from "@/components/rhf-input/rhf-textfield";
 import { UseFormReturn } from "react-hook-form";
-import { SignupSchema } from "../../schema";
+import { SignupSchemaStep1 } from "../../schema";
 
 type Props = {
-  methods: UseFormReturn<SignupSchema>;
+  methods: UseFormReturn<SignupSchemaStep1>;
   submit: VoidFunction;
 };
 
@@ -18,14 +18,27 @@ export default function SignupForm({ methods, submit }: Readonly<Props>) {
         <RhfTextfield
           name="email"
           label="email"
-          placeholder="Input an email"
-          description="Input an unique email"
+          placeholder="Enter an email"
+          description="Enter a unique email"
         />
         <RhfTextfield
           name="username"
           label="username"
-          placeholder="Input an username"
-          description="Input a unique username"
+          placeholder="Enter a username"
+          description="Enter a unique username"
+        />
+        <RhfTextfield
+          name="password"
+          label="password"
+          placeholder="Enter password"
+          description="Enter a secure password"
+        />
+
+        <RhfTextfield
+          name="confirmPassword"
+          label="confirm password"
+          placeholder="Enter confirm password"
+          description="Enter a confirm password"
         />
 
         <Button className="mt-auto bg-primary" type="submit" variant="default">
