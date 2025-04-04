@@ -28,7 +28,9 @@ export default function RhfTextfield({
           <FormControl>
             <Input className="text-sm" {...other} {...field} />
           </FormControl>
-          <FormDescription className="text-xs">{description}</FormDescription>
+          {description && (
+            <FormDescription className="text-xs">{description}</FormDescription>
+          )}
           <FormMessage className="text-xs" />
         </FormItem>
       )}
