@@ -20,3 +20,10 @@ export const signupSchemaStep1 = z
   });
 
 export type SignupSchemaStep1 = Partial<z.infer<typeof signupSchemaStep1>>;
+
+export const signupSchemaDefaultValues: SignupSchemaStep1 = {
+  email: "",
+  username: "",
+  password: "",
+  confirmPassword: "",
+};

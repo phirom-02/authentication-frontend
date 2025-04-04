@@ -1,18 +1,15 @@
-import { SignupForm } from "@/features/auth/components/signup";
+import { SignupForm } from "@/features/signup/components/signup";
 import { createLazyRoute } from "@tanstack/react-router";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { signupSchemaStep1 } from "../../schema";
-import { getDefaults } from "@/utils/zod";
+import { signupSchemaDefaultValues, signupSchemaStep1 } from "../schema";
 
 function Page() {
-  console.log(getDefaults(signupSchemaStep1));
-
   const methods = useForm({
-    resolver: zodResolver(signupSchemaStep1),
     mode: "onSubmit",
-    defaultValues: getDefaults(signupSchemaStep1),
     shouldFocusError: true,
+    resolver: zodResolver(signupSchemaStep1),
+    defaultValues: signupSchemaDefaultValues,
   });
 
   const { handleSubmit } = methods;
@@ -24,8 +21,8 @@ function Page() {
   return <SignupForm methods={methods} submit={submit} />;
 }
 
-const Signup = createLazyRoute("/signup")({
+const SignupStep1 = createLazyRoute("step-1")({
   component: Page,
 });
 
-export default Signup;
+export default SignupStep1;
