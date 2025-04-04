@@ -1,1 +1,1 @@
-export * from "./signup-schema";
+export * from "./signup-step-1-schema";

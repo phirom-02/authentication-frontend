@@ -2,14 +2,14 @@ import { SignupForm } from "@/features/signup/components/signup";
 import { createLazyRoute } from "@tanstack/react-router";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { signupSchemaDefaultValues, signupSchemaStep1 } from "../schema";
+import { signupStep1DefaultValues, signupStep1Schema } from "../schema";
 
 function Page() {
   const methods = useForm({
     mode: "onSubmit",
     shouldFocusError: true,
-    resolver: zodResolver(signupSchemaStep1),
-    defaultValues: signupSchemaDefaultValues,
+    resolver: zodResolver(signupStep1Schema),
+    defaultValues: signupStep1DefaultValues,
   });
 
   const { handleSubmit } = methods;

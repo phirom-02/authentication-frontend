@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const signupSchemaStep1 = z
+export const signupStep1Schema = z
   .object({
     email: z
       .string()
@@ -19,9 +19,9 @@ export const signupSchemaStep1 = z
     path: ["confirmPassword"],
   });
 
-export type SignupSchemaStep1 = Partial<z.infer<typeof signupSchemaStep1>>;
+export type SignupStep1Schema = Partial<z.infer<typeof signupStep1Schema>>;
 
-export const signupSchemaDefaultValues: SignupSchemaStep1 = {
+export const signupStep1DefaultValues: SignupStep1Schema = {
   email: "",
   username: "",
   password: "",
