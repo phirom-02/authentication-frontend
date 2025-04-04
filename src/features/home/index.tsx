@@ -23,7 +23,7 @@ function Page() {
   );
 }
 
-const Home = createLazyRoute("/signup")({
+const Home = createLazyRoute("home")({
   component: Page,
 });
 

@@ -2,10 +2,12 @@ import { AppBar, AppContainer } from "@/components/layout";
 import {
   createBrowserHistory,
   createRootRouteWithContext,
-  createRoute,
   createRouter,
   Outlet,
 } from "@tanstack/react-router";
+
+import signupRoutes from "./configs/signupRoute";
+import HomeRoute from "./configs/homeRoute";
 
 // import { QueryClient } from "@tanstack/react-query";
 
@@ -14,7 +16,7 @@ interface RouterContext {
   // queryClient: QueryClient;
 }
 
-const rootRoute = createRootRouteWithContext<RouterContext>()({
+export const rootRoute = createRootRouteWithContext<RouterContext>()({
   component: () => (
     <AppContainer>
       <AppBar />
@@ -23,21 +25,7 @@ const rootRoute = createRootRouteWithContext<RouterContext>()({
   ),
 });
 
-const getParentRoute = () => rootRoute;
-
-// Home route
-const HomeRoute = createRoute({
-  getParentRoute,
-  path: "/home",
-}).lazy(() => import("@/features/home").then((d) => d.default));
-
-// Register route
-const SignupRoute = createRoute({
-  getParentRoute,
-  path: "/signup",
-}).lazy(() => import("@/features/auth/pages/signup").then((d) => d.default));
-
-const routeTree = rootRoute.addChildren([SignupRoute, HomeRoute]);
+const routeTree = rootRoute.addChildren([HomeRoute, ...signupRoutes]);
 
 const router = createRouter({
   history: createBrowserHistory(),
