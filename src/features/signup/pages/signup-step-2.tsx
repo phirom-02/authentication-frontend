@@ -1,6 +1,6 @@
 import { createLazyRoute } from "@tanstack/react-router";
 import { useForm } from "react-hook-form";
-import SignupStep2Form from "../components/signup/signup-step-2-form";
+import SignupStep2Form from "../components/signup-step-2-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
   signupStep2Schema,

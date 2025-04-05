@@ -3,7 +3,7 @@ import RhfTextfield from "@/components/rhf-input/rhf-textfield";
 import { Button } from "@/components/ui/button";
 import { Stack } from "@/components/ui/stack";
 import { UseFormReturn } from "react-hook-form";
-import { SignupStep2Schema } from "../../schema/signup-step-2-schema";
+import { SignupStep2Schema } from "../schema/signup-step-2-schema";
 
 type Props = {
   methods: UseFormReturn<SignupStep2Schema>;

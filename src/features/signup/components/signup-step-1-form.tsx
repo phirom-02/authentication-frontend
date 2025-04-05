@@ -4,7 +4,7 @@ import { Stack } from "@/components/ui/stack";
 import FormProvider from "@/components/rhf-input/providers";
 import RhfTextfield from "@/components/rhf-input/rhf-textfield";
 import { UseFormReturn } from "react-hook-form";
-import { SignupStep1Schema } from "../../schema";
+import { SignupStep1Schema } from "../schema";
 
 type Props = {
   methods: UseFormReturn<SignupStep1Schema>;
