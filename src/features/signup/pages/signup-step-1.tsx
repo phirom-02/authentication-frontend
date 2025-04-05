@@ -1,10 +1,12 @@
 import { SignupStep1Form } from "@/features/signup/components/signup";
-import { createLazyRoute } from "@tanstack/react-router";
+import { createLazyRoute, useNavigate } from "@tanstack/react-router";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { signupStep1DefaultValues, signupStep1Schema } from "../schema";
 
 function Page() {
+  const navigate = useNavigate({ from: "/signup/step-1" });
+
   const methods = useForm({
     mode: "onSubmit",
     shouldFocusError: true,
@@ -16,6 +18,7 @@ function Page() {
 
   const submit = handleSubmit((data) => {
     console.log(data);
+    navigate({ to: "/signup/step-2" });
   });
 
   return <SignupStep1Form methods={methods} submit={submit} />;

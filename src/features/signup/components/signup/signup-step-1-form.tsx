@@ -25,15 +25,17 @@ export default function SignupStep1Form({ methods, submit }: Readonly<Props>) {
           name="password"
           label="password"
           placeholder="Enter password"
+          type="password"
         />
 
         <RhfTextfield
           name="confirmPassword"
           label="confirm password"
           placeholder="Enter confirm password"
+          type="password"
         />
 
-        <Button className="mt-auto bg-primary" type="submit" variant="default">
+        <Button className="mt-auto bg-primary" type="submit">
           Next
         </Button>
       </Stack>
