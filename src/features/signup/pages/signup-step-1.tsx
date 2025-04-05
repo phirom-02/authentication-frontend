@@ -1,4 +1,4 @@
-import { SignupForm } from "@/features/signup/components/signup";
+import { SignupStep1Form } from "@/features/signup/components/signup";
 import { createLazyRoute } from "@tanstack/react-router";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -18,7 +18,7 @@ function Page() {
     console.log(data);
   });
 
-  return <SignupForm methods={methods} submit={submit} />;
+  return <SignupStep1Form methods={methods} submit={submit} />;
 }
 
 const SignupStep1 = createLazyRoute("step-1")({

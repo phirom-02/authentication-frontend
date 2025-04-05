@@ -11,7 +11,7 @@ type Props = {
   submit: VoidFunction;
 };
 
-export default function SignupForm({ methods, submit }: Readonly<Props>) {
+export default function SignupStep1Form({ methods, submit }: Readonly<Props>) {
   return (
     <FormProvider methods={methods} onSubmit={submit}>
       <Stack className="gap-2 p-4">
