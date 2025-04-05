@@ -6,8 +6,8 @@ import {
   Outlet,
 } from "@tanstack/react-router";
 
-import signupRoutes from "./configs/signupRoute";
-import HomeRoute from "./configs/homeRoute";
+import signupRoutes from "./configs/signup-route";
+import HomeRoute from "./configs/home-route";
 
 // import { QueryClient } from "@tanstack/react-query";
 
