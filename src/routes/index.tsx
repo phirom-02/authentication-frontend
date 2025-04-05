@@ -1,27 +1,21 @@
-import { AppBar, AppContainer } from "@/components/layout";
+import { AppBar } from "@/components/layout";
 import {
-  createBrowserHistory,
-  createRootRouteWithContext,
-  createRouter,
   Outlet,
+  createRouter,
+  createRootRoute,
+  createBrowserHistory,
 } from "@tanstack/react-router";
 
 import signupRoutes from "./configs/signup-route";
 import HomeRoute from "./configs/home-route";
+import ContextsWrapper from "@/context";
 
-// import { QueryClient } from "@tanstack/react-query";
-
-// eslint-disable-next-line @typescript-eslint/no-empty-object-type
-interface RouterContext {
-  // queryClient: QueryClient;
-}
-
-export const rootRoute = createRootRouteWithContext<RouterContext>()({
+export const rootRoute = createRootRoute({
   component: () => (
-    <AppContainer>
+    <ContextsWrapper>
       <AppBar />
       <Outlet />
-    </AppContainer>
+    </ContextsWrapper>
   ),
 });
 
@@ -29,13 +23,7 @@ const routeTree = rootRoute.addChildren([HomeRoute, ...signupRoutes]);
 
 const router = createRouter({
   history: createBrowserHistory(),
-
   routeTree,
-
-  // Apply any context here
-  context: {
-    // queryClient,
-  },
 });
 
 export default router;
